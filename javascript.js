@@ -24,13 +24,17 @@ function getComputerChoice() {
 //     return(userChoice);
 // }
 
-function humanWin() {
-    results.textContent = "You win! +1 to Humans";
+function humanWin(human, computer) {
+    let humanChoice = human.charAt(0) + human.slice(1).toLowerCase();
+    let computerChoice = computer.charAt(0) + computer.slice(1).toLowerCase();
+    results.textContent = `You win +1! ${humanChoice} beats ${computerChoice}`;
     humanScore++;
 }
 
-function computerWin() {
-    results.textContent = "Computer Wins! +1 to the computers";
+function computerWin(human, computer) {
+    let humanChoice = human.charAt(0) + human.slice(1).toLowerCase();
+    let computerChoice = computer.charAt(0) + computer.slice(1).toLowerCase();
+    results.textContent = `Computer Wins +1! ${computerChoice} beats ${humanChoice} `;
     computerScore++;
 }
 
@@ -57,24 +61,24 @@ function playRound(humanChoice) {
         tieRound();
     }
     else if (human === "ROCK" && computer === "PAPER") {
-        computerWin();
+        computerWin(human, computer);
     }
     else if (human === "ROCK" && computer === "SCISSORS") {
-        humanWin();
+        humanWin(human, computer);
     }
     else if (human === "PAPER" && computer === "ROCK") {
-        humanWin();
+        humanWin(human, computer);
     }
     else if (human === "PAPER" && computer === "SCISSORS") {
-        computerWin();
+        computerWin(human, computer);
 
     }
     else if (human === "SCISSORS" && computer === "ROCK") {
-        computerWin();
+        computerWin(human, computer);
 
     }
     else if (human === "SCISSORS" && computer === "PAPER") {
-        humanWin();
+        humanWin(human, computer);
     }
 
     updateScore();
