@@ -1,0 +1,22 @@
+body {
+    background-color: lightseagreen;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+img {
+    height: 150px;
+    width: auto;
+}
+
+
+
